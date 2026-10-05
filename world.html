@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beyond Amazon — Hamza Alam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1E2761;
+    --navy-deep:#141A47;
+    --gold:#B8860B;
+    --gold-soft:#D4A94C;
+    --ivory:#F7F6F2;
+    --charcoal:#22262F;
+    --muted:#6B7280;
+    --line:#E4E1D8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'IBM Plex Sans',sans-serif;color:var(--charcoal);background:var(--ivory);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em;}
+  a{color:inherit;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 32px;}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.is-visible{opacity:1;transform:translateY(0);}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(20,26,71,0.92);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.08);}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;}
+  nav .brand{color:#fff;font-family:'Fraunces',serif;font-weight:600;font-size:18px;text-decoration:none;}
+  nav .links{display:flex;gap:28px;font-size:14px;}
+  nav .links a{color:#C7CAE6;text-decoration:none;transition:color .15s ease;}
+  nav .links a:hover{color:var(--gold-soft);}
+
+  header{background:var(--navy);color:#fff;padding:64px 0 72px;}
+  header .eyebrow{font-size:15px;color:var(--gold-soft);margin-bottom:10px;}
+  header h1{font-size:clamp(28px,4vw,42px);color:#fff;max-width:16ch;}
+  header p{margin-top:14px;font-size:17px;max-width:58ch;color:#D8DAF0;}
+
+  section{padding:72px 0;}
+  .section-title{font-size:26px;margin-bottom:8px;}
+  .section-sub{color:var(--muted);font-size:15.5px;margin-bottom:36px;max-width:60ch;}
+
+  /* Goodreads */
+  .goodreads-frame-wrap{border:1px solid var(--line);border-radius:6px;padding:20px;background:#fff;overflow-x:auto;}
+
+  /* Travel writing */
+  .travel-grid{display:flex;flex-direction:column;gap:20px;}
+  .travel-card{
+    border:1px solid var(--line);
+    border-radius:6px;
+    background:#fff;
+    padding:24px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .travel-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(30,39,97,0.08);}
+  .travel-meta{display:flex;gap:14px;font-size:13px;color:var(--gold);margin-bottom:8px;font-weight:600;}
+  .travel-title{font-size:20px;margin-bottom:8px;}
+  .travel-body{color:var(--charcoal);font-size:15.5px;}
+  .travel-loading{color:var(--muted);font-style:italic;}
+
+  footer{background:var(--navy-deep);color:#fff;padding:48px 0;text-align:center;font-size:14px;color:#AEB2CE;}
+  footer a{color:var(--gold-soft);text-decoration:none;}
+
+  @media (max-width:720px){ nav .links{gap:16px;font-size:13px;} }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">Hamza Alam</a>
+    <div class="links">
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#building">Building</a>
+      <a href="index.html#problems">Problems I Solve</a>
+      <a href="world.html">Beyond Amazon</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Beyond Amazon</div>
+    <h1>What I'm reading, and where I've been</h1>
+    <p>The non-work side of things — books I'm working through and dispatches from travel, updated directly by me.</p>
+  </div>
+</header>
+
+<section id="books">
+  <div class="wrap">
+    <h2 class="section-title reveal">Currently reading</h2>
+    <p class="section-sub reveal">Pulled live from my Goodreads shelf.</p>
+    <div class="goodreads-frame-wrap reveal">
+      <!--
+        Replace the iframe src below with your own Goodreads widget embed code.
+        Get it from: Goodreads.com → My Books → Widgets → choose a shelf → copy the iframe code.
+        The src below is a placeholder structure showing the expected format.
+      -->
+      <iframe
+        id="goodreadsWidget"
+        src="https://www.goodreads.com/review/grid_widget/YOUR_GOODREADS_USER_ID?cover_size=medium&hide_link=false&hide_title=true&num_books=12&order=d&shelf=read&sort=date_read"
+        width="100%" height="400" frameborder="0">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<section id="travel">
+  <div class="wrap">
+    <h2 class="section-title reveal">Travel writing</h2>
+    <p class="section-sub reveal">Loaded from <code>travel-posts.json</code> — edit that file directly to add a new post, no code required.</p>
+    <div class="travel-grid reveal" id="travelGrid">
+      <p class="travel-loading">Loading posts…</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Hamza Alam — <a href="index.html">back to main site</a>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Load travel posts from the editable JSON file
+  fetch('travel-posts.json')
+    .then(res => res.json())
+    .then(posts => {
+      const grid = document.getElementById('travelGrid');
+      if (!posts.length) {
+        grid.innerHTML = '<p class="travel-loading">No posts yet — add one to travel-posts.json.</p>';
+        return;
+      }
+      posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+      grid.innerHTML = posts.map(post => `
+        <div class="travel-card">
+          <div class="travel-meta"><span>${post.location || ''}</span><span>${post.date || ''}</span></div>
+          <h3 class="travel-title">${post.title}</h3>
+          <p class="travel-body">${post.body}</p>
+        </div>
+      `).join('');
+    })
+    .catch(() => {
+      document.getElementById('travelGrid').innerHTML = '<p class="travel-loading">Couldn\'t load posts right now.</p>';
+    });
+</script>
+
+</body>
+</html>

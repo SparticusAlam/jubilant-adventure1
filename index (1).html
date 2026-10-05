@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hamza Alam — Amazon Growth Operator & Builder</title>
+<meta name="description" content="Amazon Seller Central & Vendor Central specialist. £22M+ revenue managed. Building an AI layer for Amazon advertising.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1E2761;
+    --navy-deep:#141A47;
+    --gold:#B8860B;
+    --gold-soft:#D4A94C;
+    --ivory:#F7F6F2;
+    --charcoal:#22262F;
+    --muted:#6B7280;
+    --line:#E4E1D8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'IBM Plex Sans',sans-serif;
+    color:var(--charcoal);
+    background:var(--ivory);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em;}
+  a{color:inherit;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 32px;}
+  .num{font-family:'IBM Plex Mono',monospace;font-weight:500;}
+
+  /* reveal-on-scroll */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.is-visible{opacity:1;transform:translateY(0);}
+
+  /* NAV */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(20,26,71,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;}
+  nav .brand{color:#fff;font-family:'Fraunces',serif;font-weight:600;font-size:18px;text-decoration:none;}
+  nav .links{display:flex;gap:28px;font-size:14px;}
+  nav .links a{color:#C7CAE6;text-decoration:none;transition:color .15s ease;}
+  nav .links a:hover{color:var(--gold-soft);}
+
+  /* HERO */
+  header{
+    background:var(--navy);
+    color:#fff;
+    padding:72px 0 96px;
+    position:relative;
+    overflow:hidden;
+  }
+  header::before{
+    content:"";
+    position:absolute;
+    top:-120px; right:-120px;
+    width:420px; height:420px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(212,169,76,0.14), transparent 70%);
+    animation:float 10s ease-in-out infinite;
+  }
+  @keyframes float{
+    0%,100%{transform:translateY(0) scale(1);}
+    50%{transform:translateY(24px) scale(1.06);}
+  }
+  header .wrap{display:flex;flex-direction:column;gap:28px;position:relative;}
+  .eyebrow-name{font-size:15px;color:var(--gold-soft);letter-spacing:0.02em;}
+  h1{font-size:clamp(32px,4.4vw,52px);line-height:1.14;max-width:14ch;color:#fff;}
+  .lede{font-size:18px;max-width:56ch;color:#D8DAF0;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;}
+  .btn{
+    display:inline-block;
+    padding:12px 24px;
+    border-radius:2px;
+    font-size:15px;
+    font-weight:500;
+    text-decoration:none;
+    transition:transform .15s ease, background .15s ease;
+    cursor:pointer;
+    border:none;
+    font-family:'IBM Plex Sans',sans-serif;
+  }
+  .btn-primary{background:var(--gold);color:var(--navy-deep);}
+  .btn-primary:hover{background:var(--gold-soft);transform:translateY(-1px);}
+  .btn-ghost{border:1px solid rgba(255,255,255,0.35);color:#fff;background:transparent;}
+  .btn-ghost:hover{border-color:#fff;transform:translateY(-1px);}
+
+  /* STATS LEDGER */
+  .ledger{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,0.08);}
+  .ledger .wrap{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    padding:28px 32px;
+  }
+  .ledger-item{padding:0 20px;border-left:1px solid rgba(255,255,255,0.14);}
+  .ledger-item:first-child{border-left:none;padding-left:0;}
+  .ledger-num{font-size:26px;color:var(--gold-soft);display:block;}
+  .ledger-label{font-size:13px;color:#AEB2CE;margin-top:4px;}
+
+  /* SECTIONS */
+  section{padding:80px 0;}
+  .section-title{font-size:28px;margin-bottom:8px;}
+  .section-sub{color:var(--muted);font-size:16px;margin-bottom:40px;max-width:60ch;}
+
+  /* EXPERIENCE */
+  .role{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:24px 0;border-top:1px solid var(--line);transition:background .2s ease;}
+  .role:hover{background:rgba(30,39,97,0.03);}
+  .role:last-child{border-bottom:1px solid var(--line);}
+  .role-period{color:var(--muted);font-size:14px;padding-top:2px;}
+  .role-title{font-size:18px;font-weight:600;font-family:'Fraunces',serif;}
+  .role-co{color:var(--gold);font-size:15px;margin-bottom:6px;}
+  .role-desc{color:var(--charcoal);font-size:15.5px;max-width:64ch;}
+
+  /* BUILDING */
+  .building{background:var(--navy);color:#fff;}
+  .building .section-title{color:#fff;}
+  .building .section-sub{color:#C7CAE6;}
+  .building-body{font-size:17px;max-width:66ch;color:#E4E5F3;}
+  .building-body p + p{margin-top:16px;}
+  .building-tag{display:inline-block;font-size:13px;color:var(--gold-soft);border:1px solid rgba(212,169,76,0.4);padding:4px 12px;border-radius:2px;margin-bottom:20px;}
+
+  /* SKILLS */
+  .skill-groups{display:grid;grid-template-columns:1fr 1fr;gap:32px 48px;}
+  .skill-group h3{font-size:15px;font-family:'IBM Plex Sans',sans-serif;font-weight:600;color:var(--navy);margin-bottom:10px;}
+  .skill-list{color:var(--charcoal);font-size:15px;}
+
+  /* FAQ / PROBLEM SOLVER */
+  .problem-list{display:flex;flex-direction:column;gap:12px;}
+  .problem{
+    border:1px solid var(--line);
+    border-radius:4px;
+    background:#fff;
+    overflow:hidden;
+  }
+  .problem-q{
+    width:100%;
+    text-align:left;
+    background:none;
+    border:none;
+    padding:20px 24px;
+    font-family:'Fraunces',serif;
+    font-size:17px;
+    font-weight:600;
+    color:var(--navy);
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+  }
+  .problem-q .plus{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:20px;
+    color:var(--gold);
+    transition:transform .25s ease;
+    flex-shrink:0;
+  }
+  .problem.open .plus{transform:rotate(45deg);}
+  .problem-a{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
+  }
+  .problem-a-inner{padding:0 24px 20px;color:var(--charcoal);font-size:15.5px;max-width:68ch;}
+  .problem.open .problem-a{max-height:300px;}
+
+  /* ENQUIRY FORM */
+  .enquiry{background:var(--ivory);border:1px solid var(--line);border-radius:6px;padding:36px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .form-field{display:flex;flex-direction:column;gap:6px;}
+  .form-field label{font-size:13px;font-weight:600;color:var(--navy);}
+  .form-field input, .form-field textarea{
+    padding:11px 14px;
+    border:1px solid var(--line);
+    border-radius:3px;
+    font-family:'IBM Plex Sans',sans-serif;
+    font-size:15px;
+    background:#fff;
+    transition:border-color .15s ease;
+  }
+  .form-field input:focus, .form-field textarea:focus{outline:none;border-color:var(--gold);}
+  .form-field textarea{resize:vertical;min-height:100px;}
+  .form-status{margin-top:14px;font-size:14px;}
+  .form-status.success{color:#1a7a4c;}
+  .form-status.error{color:#b3261e;}
+  /* honeypot - hidden from real users, bots often fill it */
+  .hp-field{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden;}
+
+  @media (max-width:720px){
+    .ledger .wrap{grid-template-columns:1fr 1fr;row-gap:20px;}
+    .ledger-item{border-left:none;padding-left:0;}
+    .ledger-item:nth-child(odd){border-right:1px solid rgba(255,255,255,0.14);}
+    .role{grid-template-columns:1fr;gap:6px;}
+    .skill-groups{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    nav .links{gap:16px;font-size:13px;}
+  }
+
+  /* FOOTER */
+  footer{background:var(--navy-deep);color:#fff;padding:64px 0;}
+  footer h2{color:#fff;font-size:26px;margin-bottom:12px;}
+  footer p{color:#C7CAE6;margin-bottom:24px;max-width:50ch;}
+  .contact-links{display:flex;gap:24px;flex-wrap:wrap;font-size:15px;}
+  .contact-links a{text-decoration:none;color:var(--gold-soft);border-bottom:1px solid rgba(212,169,76,0.3);padding-bottom:2px;}
+  .contact-links a:hover{border-color:var(--gold-soft);}
+  .foot-note{margin-top:40px;font-size:13px;color:#7A7FAA;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Hamza Alam</a>
+    <div class="links">
+      <a href="#experience">Experience</a>
+      <a href="#building">Building</a>
+      <a href="#problems">Problems I Solve</a>
+      <a href="world.html">Beyond Amazon</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <div class="eyebrow-name">Hamza Alam</div>
+    <h1>Five years of owning Amazon businesses. One idea to make advertising math, not guesswork.</h1>
+    <p class="lede">I've led £22M+ in Amazon revenue and full P&amp;L ownership across the UK, EMEA, and the US — and I'm building the tool I wish I'd had: an AI layer that connects directly to Amazon's Ads API and turns bidding into a solved equation instead of a dashboard to babysit.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#contact">Get in touch</a>
+      <a class="btn btn-ghost" href="#problems">What problem are you facing?</a>
+    </div>
+  </div>
+</header>
+
+<div class="ledger">
+  <div class="wrap">
+    <div class="ledger-item reveal">
+      <span class="ledger-num num" data-count="22">£0M+</span>
+      <span class="ledger-label">Revenue managed across UK, EMEA &amp; US</span>
+    </div>
+    <div class="ledger-item reveal">
+      <span class="ledger-num num" data-count="400">0%</span>
+      <span class="ledger-label">US sales growth via AI-driven bid automation</span>
+    </div>
+    <div class="ledger-item reveal">
+      <span class="ledger-num num-static">20 → 110</span>
+      <span class="ledger-label">Daily orders on one SKU, a single Prime Day</span>
+    </div>
+    <div class="ledger-item reveal">
+      <span class="ledger-num num" data-count="7000">0+</span>
+      <span class="ledger-label">SKUs managed across global marketplaces</span>
+    </div>
+  </div>
+</div>
+
+<section id="experience">
+  <div class="wrap">
+    <h2 class="section-title reveal">Experience</h2>
+    <p class="section-sub reveal">Amazon marketplace and advertising management across brand-side, agency, and consultant roles.</p>
+
+    <div class="role reveal">
+      <div class="role-period">Apr 2024 – Feb 2026</div>
+      <div>
+        <div class="role-title">Category &amp; Advertising Manager</div>
+        <div class="role-co">UK Automotive &amp; FMCG Brand · 7,000+ SKUs</div>
+        <p class="role-desc">Owned Amazon business strategy and advertising across the UK, EMEA and US — £22M in revenue, a £3.2M ad budget, and full leadership of internal teams and external agencies. Grew US sales 400% after leading the rollout of AI-driven bid automation.</p>
+      </div>
+    </div>
+
+    <div class="role reveal">
+      <div class="role-period">Oct 2023 – Apr 2024</div>
+      <div>
+        <div class="role-title">Amazon Marketplace Consultant</div>
+        <div class="role-co">HnS Team</div>
+        <p class="role-desc">A-Z brand management for Cartizma across the US, Mexico and Canada — including a Prime Day push that scaled one SKU from 20 to 110 daily orders.</p>
+      </div>
+    </div>
+
+    <div class="role reveal">
+      <div class="role-period">Aug 2023 – Oct 2023</div>
+      <div>
+        <div class="role-title">Amazon Account Executive</div>
+        <div class="role-co">Rust-Oleum Europe</div>
+        <p class="role-desc">Managed Vendor Central for an account representing 50% of £7M in annual revenue — the 3rd largest in the UK/EU region — and built a Python tool to automate bulk catalog uploads.</p>
+      </div>
+    </div>
+
+    <div class="role reveal">
+      <div class="role-period">Feb 2020 – Aug 2023</div>
+      <div>
+        <div class="role-title">Consultant / Founding Member</div>
+        <div class="role-co">Duality</div>
+        <p class="role-desc">Primary account lead for 5+ Amazon brand clients simultaneously, from onboarding through strategic account management, forecasting, and stakeholder reporting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="building" class="building">
+  <div class="wrap">
+    <span class="building-tag reveal">Currently building</span>
+    <h2 class="section-title reveal">An AI layer for Amazon advertising</h2>
+    <p class="section-sub reveal">Early-stage, self-directed — grounded in five years of actually running the budgets this would optimize.</p>
+    <div class="building-body reveal">
+      <p>Every Amazon PPC platform I've used treats bidding as a dashboard problem: pull the data, eyeball the trend, adjust the bid. I think it's a math problem — a constrained optimization problem with real money on the line, closer to real-time bidding in ad-tech than to a reporting tool.</p>
+      <p>I'm building a tool that connects directly to Amazon's Advertising API and treats bid and budget allocation as something to be solved, not monitored — grounded in the same auction dynamics I spent years managing manually across brand-side and agency roles, including Rust-Oleum and HnS Team.</p>
+      <p>It's early. I'm not raising or recruiting yet — but if you've run Amazon ad accounts at scale and this problem is familiar to you, I'd like to hear how you think about it.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2 class="section-title reveal">Where I work</h2>
+    <div class="skill-groups">
+      <div class="skill-group reveal">
+        <h3>Amazon &amp; Advertising</h3>
+        <p class="skill-list">Seller Central, Vendor Central, Sponsored Products/Brands/Display, Amazon DSP, Brand Registry, A+ Content</p>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Analytics &amp; Automation</h3>
+        <p class="skill-list">Perpetua, Helium 10, Jungle Scout, Keepa, Amazon Attribution, Python</p>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Cross-Channel</h3>
+        <p class="skill-list">Walmart, TikTok Ads, Meta Business Manager, Google Ads, external traffic attribution</p>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Operations</h3>
+        <p class="skill-list">Forecasting, inventory planning, supply chain coordination, P&amp;L ownership, team leadership</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="problems">
+  <div class="wrap">
+    <h2 class="section-title reveal">What problem are you facing with your Amazon brand?</h2>
+    <p class="section-sub reveal">Click a problem below — these are the issues I'm usually brought in to fix.</p>
+    <div class="problem-list">
+
+      <div class="problem reveal">
+        <button class="problem-q"><span>Traffic — my listings just aren't being seen</span><span class="plus">+</span></button>
+        <div class="problem-a"><div class="problem-a-inner">Usually a mix of weak keyword coverage, thin backend search terms, and organic ranking that's stalled because conversion rate isn't strong enough to earn visibility. I start with a full keyword and content audit before touching ad spend — more spend on a listing that doesn't convert just burns budget faster.</div></div>
+      </div>
+
+      <div class="problem reveal">
+        <button class="problem-q"><span>Conversion — traffic's fine, sales aren't following</span><span class="plus">+</span></button>
+        <div class="problem-a"><div class="problem-a-inner">This is almost always a content, pricing, or trust-signal issue: images, A+ content, reviews, or a price that doesn't match perceived value. I've driven conversion gains through mobile-first content and product-page optimization — one EQUIP range I managed moved conversion up ~2% through this exact process.</div></div>
+      </div>
+
+      <div class="problem reveal">
+        <button class="problem-q"><span>ROAS / ACoS — ads are running, profit isn't</span><span class="plus">+</span></button>
+        <div class="problem-a"><div class="problem-a-inner">I treat this as a structural problem, not a bidding problem — campaign structure, search term waste, and automation are usually the real levers. I took one account from 325% ACoS to 27.6% by rebuilding campaign structure and automating bid management, not by cutting spend.</div></div>
+      </div>
+
+      <div class="problem reveal">
+        <button class="problem-q"><span>Vendor negotiation — Amazon's terms keep tightening</span><span class="plus">+</span></button>
+        <div class="problem-a"><div class="problem-a-inner">Vendor Central negotiations come down to knowing your real margin floor and having the sales and content data to back your position before you're in the room. I've managed Vendor Central accounts representing 50%+ of total brand revenue and built the pricing models that go into those conversations.</div></div>
+      </div>
+
+      <div class="problem reveal">
+        <button class="problem-q"><span>Something else — not listed here</span><span class="plus">+</span></button>
+        <div class="problem-a"><div class="problem-a-inner">If it's Amazon-shaped, there's a decent chance I've run into it before — catalogue conflicts, stranded inventory, account health warnings, multichannel fulfilment, international launches. Send me a note below and I'll tell you honestly whether it's something I can help with.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact-form">
+  <div class="wrap">
+    <h2 class="section-title reveal">Send an enquiry</h2>
+    <p class="section-sub reveal">Tell me about your brand and what you're up against — I read every message myself.</p>
+
+    <form class="enquiry reveal" id="enquiryForm" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+      <input type="hidden" name="subject" value="New enquiry from hamzaalam.com">
+
+      <!-- Honeypot: invisible to real users, bots tend to fill every field -->
+      <div class="hp-field">
+        <label for="website">Leave this field empty</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-field">
+          <label for="business">Business name</label>
+          <input type="text" id="business" name="business">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+      </div>
+      <div class="form-field" style="margin-bottom:20px;">
+        <label for="message">What's going on with your brand?</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="background:var(--navy);color:#fff;">Send enquiry</button>
+      <div class="form-status" id="formStatus"></div>
+    </form>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's talk</h2>
+    <p>Open to Amazon Seller Central and Vendor Central roles, and always glad to hear from anyone thinking about Amazon advertising the way I do.</p>
+    <div class="contact-links">
+      <a href="mailto:mhamza.alam@gmail.com">mhamza.alam@gmail.com</a>
+      <a href="https://linkedin.com/in/mhamza-alam" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="world.html">Beyond Amazon</a>
+    </div>
+    <div class="foot-note">Hamza Alam</div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Animated counters
+  const counters = document.querySelectorAll('[data-count]');
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.getAttribute('data-count'), 10);
+      const isPercent = el.textContent.trim().endsWith('%');
+      const isM = el.textContent.includes('M');
+      const suffix = isPercent ? '%' : (isM ? 'M+' : '+');
+      const prefix = el.textContent.trim().startsWith('£') ? '£' : '';
+      let current = 0;
+      const duration = 1400;
+      const start = performance.now();
+      function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        current = Math.floor(progress * target);
+        el.textContent = prefix + current + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+        else el.textContent = prefix + target + suffix;
+      }
+      requestAnimationFrame(tick);
+      counterIO.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(el => counterIO.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.problem-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const parent = btn.closest('.problem');
+      const wasOpen = parent.classList.contains('open');
+      document.querySelectorAll('.problem.open').forEach(p => p.classList.remove('open'));
+      if (!wasOpen) parent.classList.add('open');
+    });
+  });
+
+  // Enquiry form submission + honeypot check
+  const form = document.getElementById('enquiryForm');
+  const status = document.getElementById('formStatus');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const honeypot = form.querySelector('#website').value;
+    if (honeypot) {
+      // Bot likely filled the hidden field — silently drop
+      status.textContent = 'Thank you — your message has been sent.';
+      status.className = 'form-status success';
+      form.reset();
+      return;
+    }
+    status.textContent = 'Sending…';
+    status.className = 'form-status';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+      const data = await res.json();
+      if (data.success) {
+        status.textContent = 'Thank you — your message has been sent. I\'ll get back to you soon.';
+        status.className = 'form-status success';
+        form.reset();
+      } else {
+        status.textContent = 'Something went wrong — please email me directly instead.';
+        status.className = 'form-status error';
+      }
+    } catch (err) {
+      status.textContent = 'Something went wrong — please email me directly instead.';
+      status.className = 'form-status error';
+    }
+  });
+</script>
+
+</body>
+</html>
